@@ -9,6 +9,7 @@
         * {
             padding: 0;
             margin: 0;
+            transition: 230ms all;
         }
 
         html {
@@ -41,7 +42,7 @@
             color: #388E3C;
         }
 
-        #icon{
+        #icon {
             position: absolute;
             opacity: 0;
         }
@@ -52,28 +53,86 @@
             margin: 0 auto;
         }
 
-        footer{
+        footer {
             text-align: center;
             color: white;
             font-size: 12px;
             margin-bottom: 20px;
         }
 
-        footer a{
+        footer a {
             color: #C8E6C9;
             text-decoration: none;
         }
+
         #cnzz_stat_icon_1256775344 {
             display: none;
+        }
+
+        .mask {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            background-color: #FFF;
+            opacity: .2;
+            display: none;
+        }
+
+        #wechat_notice {
+            width: 80%;
+            position: fixed;
+            top: -100px;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            margin: 0 auto;
+            border-radius: 5px;
+            text-align: center;
+            z-index: 9999;
+            background-color: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .5);
         }
     </style>
 </head>
 <body>
-<img id="logo" src="img/logo.png" alt=""/>
-<a id="download" href="apk/toarunolibris.apk">下载ToarunoLibris(测试版)</a>
-<img id="launch" src="img/launch.png" alt=""/>
-<footer>Made with love. By <a href="http://weibo.com/u/2025660943">Vango in DIVINITI</a></footer>
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cspan id='cnzz_stat_icon_1256775344'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1256775344%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+<div class="container">
+    <img id="logo" src="img/logo.png" alt=""/>
+    <a id="download" href="#">下载ToarunoLibris(测试版)</a>
+    <img id="launch" src="img/launch.png" alt=""/>
+    <footer>Made with love. By <a href="http://weibo.com/u/2025660943">Vango in DIVINITI</a></footer>
+</div>
+<div class="mask"></div>
+<div id="wechat_notice">
+    <span style="float:right;font-size: 20px">↗️</span><br/><br/>
+    点击右上角，选择从浏览器打开进行下载
+</div>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#download").click(function () {
+            if (isWeixinBrowser()) {
+                $(".mask").show();
+                $("#wechat_notice").css("top","20px");
+                $(".container").css("-webkit-filter", "blur(5px)");
+            }
+        });
+
+        $(".mask").click(function () {
+            $("#wechat_notice").css("top","-100px");
+            $(this).hide();
+            $(".container").css("-webkit-filter", "blur(0)");
+        });
+    });
+
+    function isWeixinBrowser() {
+        var ua = navigator.userAgent.toLowerCase();
+        return (/micromessenger/.test(ua)) ? true : false;
+    }
+</script>
+<!--<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");-->
+<!--document.write(unescape("%3Cspan id='cnzz_stat_icon_1256775344'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1256775344%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>-->
 </body>
 </html>
