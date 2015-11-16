@@ -118,7 +118,8 @@
                 $("#wechat_notice").css("top", "20px");
                 $(".container").css("-webkit-filter", "blur(5px)");
             } else {
-                window.location.href = "apk/toarunolibris.apk";
+                var time = new Date();
+                window.location.href = "apk/toarunolibris.apk?" + time.getTime();
             }
         });
 
