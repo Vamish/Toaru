@@ -100,7 +100,7 @@
 <body>
 <div class="container">
     <img id="logo" src="img/logo.png" alt=""/>
-    <a id="download" href="apk/toarunolibris.apk">下载ToarunoLibris(测试版)</a>
+    <a id="download" href="#">下载ToarunoLibris(测试版)</a>
     <img id="launch" src="img/launch.png" alt=""/>
     <footer>Made with love. By <a href="http://weibo.com/u/2025660943">Vango in DIVINITI</a></footer>
 </div>
@@ -115,13 +115,15 @@
         $("#download").click(function () {
             if (isWeixinBrowser()) {
                 $(".mask").show();
-                $("#wechat_notice").css("top","20px");
+                $("#wechat_notice").css("top", "20px");
                 $(".container").css("-webkit-filter", "blur(5px)");
+            } else {
+                window.location.href = "apk/toarunolibris.apk";
             }
         });
 
         $(".mask").click(function () {
-            $("#wechat_notice").css("top","-100px");
+            $("#wechat_notice").css("top", "-100px");
             $(this).hide();
             $(".container").css("-webkit-filter", "blur(0)");
         });
