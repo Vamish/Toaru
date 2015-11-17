@@ -1,0 +1,143 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    transition: 230ms all;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #4CAF50;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+/* start commented backslash hack \*/
+* html .clearfix {
+    height: 1%;
+}
+
+.clearfix {
+    display: block;
+}
+
+.container {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.left {
+    width: 400px;
+    float: left;
+    position: absolute;
+    top: 50%;
+    margin-top: -300px;
+}
+
+#logo {
+    width: 85%;
+    display: block;
+    margin: 50px auto 0;
+}
+
+#download {
+    width: 85%;
+    background-color: #C8E6C9;
+    margin: 20px auto 0;
+    display: block;
+    padding: 10px 0;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 20px;
+    color: #388E3C;
+}
+
+#icon {
+    position: absolute;
+    opacity: 0;
+}
+
+#launch {
+    width: 580px;
+    float: right;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: #C8E6C9;
+    text-decoration: none;
+}
+
+#cnzz_stat_icon_1256775344 {
+    display: none;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #FFF;
+    opacity: .5;
+    display: none;
+}
+
+#wechat_notice {
+    width: 80%;
+    position: fixed;
+    top: -100px;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 9999;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+@media (max-width: 800px) {
+    .container {
+        width: 100%;
+    }
+
+    .left {
+        width: 100%;
+        position: inherit;
+        margin-top: 0;
+    }
+
+    #launch {
+        width: 100%;
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+}
