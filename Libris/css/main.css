@@ -48,6 +48,7 @@ body {
     position: absolute;
     top: 50%;
     margin-top: -250px;
+    text-align: center;
 }
 
 #logo {
@@ -68,6 +69,11 @@ body {
     line-height: 20px;
     border-radius: 20px;
     color: #388E3C;
+}
+
+#version{
+    margin-top: 5px;
+    color: #C8E6C9;
 }
 
 #icon {
