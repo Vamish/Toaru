@@ -1,3 +1,7 @@
 {
-  "version_name": "0.9.7.1"
+  "version_name": "0.9.7.1",
+  "version_intro": [
+    "解决 登录时密码输错产生的bug",
+    "修改 反馈输入框提示信息"
+  ]
 }
