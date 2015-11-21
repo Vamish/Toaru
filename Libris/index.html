@@ -12,7 +12,7 @@
     <div class="left">
         <img id="logo" src="img/logo.png" alt=""/>
         <a id="download" href="#">下载ToarunoLibris</a>
-        <div id="version">Android版: 0.9.7</div>
+        <div id="version">Android版: 0.9.7.1</div>
     </div>
     <img id="launch" src="img/launch.png" alt=""/>
 
@@ -34,7 +34,7 @@
                 $(".container").css("-webkit-filter", "blur(5px)");
             } else {
                 var time = new Date();
-                window.location.href = "apk/toarunolibris.apk?" + time.getTime();
+                window.location.href = "apk/toarunolibris.apk?timestamp=" + time.getTime();
             }
         });
 
