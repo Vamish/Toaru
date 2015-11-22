@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width">
+    <title>test</title>
+    <link rel="stylesheet" href="css/materialize.min.css"/>
+    <link rel="icon" href="img/ico.png"/>
+    <style>
+        body {
+            background: #ffffff;
+        }
+
+        .parallax-container {
+            height: 200px;
+            position: relative;
+        }
+
+        #book_name {
+            max-height: 150px;
+            text-overflow: ellipsis;
+            font-size: 25px;
+            font-weight: 900;
+            position: absolute;
+            bottom: 10px;
+            margin-left: 15px;
+            overflow: hidden;
+            z-index: 9999;
+        }
+
+        .mask {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: rgba(0, 0, 0, .5);
+        }
+
+        .collection {
+            margin: 0;
+            border: 0;
+        }
+
+        .collection .collection-item.avatar {
+            min-height: inherit;
+        }
+
+        .collection .collection-item.avatar p {
+            color: #9e9e9e !important;
+        }
+
+        footer {
+            font-size: 14px;
+            text-align: center;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="parallax-container">
+    <div id="book_name" class="white-text">书名</div>
+    <div class="mask"></div>
+    <div class="parallax"><img src="img/header_bg.jpg"></div>
+</div>
+<ul class="collection" id="list"></ul>
+<footer class="grey-text"><a href="http://toaru.diviniti.cn/Libris">下载APP，查看实时数据，查书更方便！</a></footer>
+<script src="js/jquery.min.js"></script>
+<script src="js/plugin/plugin-book-info.js"></script>
+<script src="js/materialize.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.parallax').parallax();
+        //获取url参数
+        var url = window.location.href.toString().split("?")[1];
+        //获取各个参数详情
+
+        /**
+         *
+         * @type {{
+                 *  t:书本名 String
+                 *  a:作者名 String
+                 *  p:出版社 String
+                 *  c:索书号 String
+                 *  s:书本列表 Array
+                 *  *   l:藏书地 String
+                 *  *   m:可借信息 String
+                 * }}
+         *
+         */
+        var test = {
+            "t": "平凡的世界 [专著]",
+            "s": [{"l": "陈延奎馆社科书库", "m": "2015.12.25 应还"},
+                {"l": "陈延奎馆社科书库", "m": "2015.12.18 应还"},
+                {"l": "陈延奎馆社科书库", "m": "2015.12.24 应还"},
+                {"l": "陈延奎馆社科书库", "m": "2015.12.18 应还"},
+                {"l": "陈延奎馆社科书库", "m": "可供出借"},
+                {"l": "陈延奎馆社科书库", "m": "可供出借"},
+                {"l": "陈延奎馆社科书库", "m": "2015.12.28 应还"},
+                {"l": "陈延奎馆社科书库", "m": "可供出借"},
+                {"l": "陈延奎馆社科书库", "m": "可供出借"},
+                {"l": "陈延奎馆社科书库", "m": "2016.03.14 应还"},
+                {"l": "陈延奎馆社科书库", "m": "2016.10.17 应还"},
+                {"l": "陈延奎馆社科书库", "m": "2015.12.22 应还"},
+                {"l": "陈延奎馆社科书库", "m": "可供出借"},
+                {"l": "陈延奎馆社科书库", "m": "2016.01.08 应还"},
+                {"l": "陈延奎馆社科书库", "m": "可供出借"}],
+            "c": "I247.57\/LY0",
+            "p": "北京十月文艺出版社",
+            "a": "路遥著"
+        };
+        var bookInfo = JSON.parse(decodeURIComponent(url));
+        console.log(bookInfo);
+
+        //设置title
+        document.title = bookInfo["t"] + " - ToarunoLibris";
+        $("#book_name").text(bookInfo["t"]);
+        //设置详情
+        $('.collection').setBookInfo(bookInfo);
+
+    });
+</script>
+</body>
+</html>
