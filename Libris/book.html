@@ -108,7 +108,7 @@
             "a": "路遥著"
         };
         console.log(encodeURIComponent(JSON.stringify(test)));
-        var bookInfo = JSON.parse(decodeURIComponent(encodeURIComponent(JSON.stringify(test))));
+        var bookInfo = JSON.parse(decodeURIComponent(url));
         console.log(bookInfo);
 
         //设置title
