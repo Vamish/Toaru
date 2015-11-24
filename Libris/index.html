@@ -46,7 +46,7 @@
                 $(".mask").show();
                 $("#wechat_notice").css("top", "20px");
             } else {
-                var flag = prompt("下载的是Debug版本，无法保证稳定性", true);
+                var flag = confirm("下载的是Debug版本，无法保证稳定性。\n点击确定下载");
                 if (flag) {
                     var time = new Date();
                     window.location.href = "debug/toarunolibris.apk?timestamp=" + time.getTime();
