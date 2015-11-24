@@ -3,7 +3,7 @@
 <head lang="zh-cn">
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0,width=device-width">
-    <title>test</title>
+    <title>加载中。。。 - ToarunoLibris</title>
     <link rel="stylesheet" href="css/materialize.min.css"/>
     <link rel="icon" href="img/ico.png"/>
     <style>
@@ -107,7 +107,8 @@
             "p": "北京十月文艺出版社",
             "a": "路遥著"
         };
-        var bookInfo = JSON.parse(decodeURIComponent(url));
+        console.log(encodeURIComponent(JSON.stringify(test)));
+        var bookInfo = JSON.parse(decodeURIComponent(encodeURIComponent(JSON.stringify(test))));
         console.log(bookInfo);
 
         //设置title
