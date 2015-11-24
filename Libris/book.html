@@ -61,7 +61,7 @@
 </head>
 <body>
 <div class="parallax-container">
-    <div id="book_name" class="white-text">书名</div>
+    <div id="book_name" class="white-text"></div>
     <div class="mask"></div>
     <div class="parallax"><img src="site/img/header_bg.jpg"></div>
 </div>
@@ -74,7 +74,7 @@
     $(document).ready(function () {
         $('.parallax').parallax();
         //获取url参数
-        var url = window.location.href.toString().split("?")[1];
+        var url = window.location.href.toString().split("?")[1].split("&")[0];
         //获取各个参数详情
 
         /**
