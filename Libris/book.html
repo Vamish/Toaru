@@ -16,6 +16,10 @@
             position: relative;
         }
 
+        #cnzz_stat_icon_1256775344 {
+            display: none;
+        }
+
         #book_name {
             max-height: 150px;
             text-overflow: ellipsis;
@@ -86,28 +90,7 @@
                  * }}
          *
          */
-        var test = {
-            "t": "平凡的世界 [专著]",
-            "s": [{"l": "陈延奎馆社科书库", "m": "2015.12.25 应还"},
-                {"l": "陈延奎馆社科书库", "m": "2015.12.18 应还"},
-                {"l": "陈延奎馆社科书库", "m": "2015.12.24 应还"},
-                {"l": "陈延奎馆社科书库", "m": "2015.12.18 应还"},
-                {"l": "陈延奎馆社科书库", "m": "可供出借"},
-                {"l": "陈延奎馆社科书库", "m": "可供出借"},
-                {"l": "陈延奎馆社科书库", "m": "2015.12.28 应还"},
-                {"l": "陈延奎馆社科书库", "m": "可供出借"},
-                {"l": "陈延奎馆社科书库", "m": "可供出借"},
-                {"l": "陈延奎馆社科书库", "m": "2016.03.14 应还"},
-                {"l": "陈延奎馆社科书库", "m": "2016.10.17 应还"},
-                {"l": "陈延奎馆社科书库", "m": "2015.12.22 应还"},
-                {"l": "陈延奎馆社科书库", "m": "可供出借"},
-                {"l": "陈延奎馆社科书库", "m": "2016.01.08 应还"},
-                {"l": "陈延奎馆社科书库", "m": "可供出借"}],
-            "c": "I247.57\/LY0",
-            "p": "北京十月文艺出版社",
-            "a": "路遥著"
-        };
-        console.log(encodeURIComponent(JSON.stringify(test)));
+
         var bookInfo = JSON.parse(decodeURIComponent(url));
         console.log(bookInfo);
 
@@ -119,5 +102,7 @@
 
     });
 </script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cspan id='cnzz_stat_icon_1256775344'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1256775344%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 </body>
 </html>
