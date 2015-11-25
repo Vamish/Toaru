@@ -3,7 +3,7 @@
 <head lang="zh-cn">
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0,width=device-width">
-    <title>加载中。。。 - ToarunoLibris</title>
+    <title>加载中... - ToarunoLibris</title>
     <link rel="stylesheet" href="site/css/materialize.min.css"/>
     <link rel="icon" href="site/img/ico.png"/>
     <style>
@@ -75,6 +75,8 @@
         $('.parallax').parallax();
         //获取url参数
         var url = window.location.href.toString().split("?")[1].split("&")[0];
+        //Encode完后空格会变成加号
+        url = url.split("+").join(" ");
         //获取各个参数详情
 
         /**
