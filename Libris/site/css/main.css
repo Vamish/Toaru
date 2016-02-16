@@ -71,7 +71,7 @@ body {
     color: #388E3C;
 }
 
-#version{
+#version {
     margin-top: 5px;
     color: #C8E6C9;
 }
@@ -145,5 +145,9 @@ footer a {
         float: none;
         display: block;
         margin: 0 auto;
+    }
+
+    #version {
+        font-size: 14px;
     }
 }
