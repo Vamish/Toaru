@@ -74,6 +74,7 @@ body {
 #version {
     margin-top: 5px;
     color: #C8E6C9;
+    line-height: 23px;
 }
 
 #icon {
